@@ -62,6 +62,18 @@ Expected OUTPUT for this sample:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map(element => {
+    if (element.rating > 75) {
+      element.label = 'certified fresh';
+      return element;
+    } else if (element.rating >= 60) {
+      element.label = 'fresh';
+      return element;
+    } else if (element.rating < 60) {
+      element.label = 'rotten';
+      return element;
+    }
+  })
 }
 
 
